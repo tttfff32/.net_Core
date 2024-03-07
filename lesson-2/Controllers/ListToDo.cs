@@ -14,18 +14,7 @@ public class ListToDoController : ControllerBase
 {
     public string JsonData { get; set; }
     public List<Task> Tasks { get; set; }
-
-    //     private static readonly string[] NameOfTasks = new[]
-    //    {
-    //         "Wish dishes", "Wash floor", "folding laundry", "Shoping"
-    //     };
-    //     private static readonly string[] isComplete = new[]
-    //  {
-    //         "true","false"
-    //     };
     private readonly ILogger<ListToDoController> _logger;
-    // public int Count { get; set; }
-    // public IEnumerable<Task> Arr { get; set; }
 
 
     public ListToDoController(ILogger<ListToDoController> logger)
@@ -36,13 +25,6 @@ public class ListToDoController : ControllerBase
 
         _logger = logger;
 
-        // Arr = Enumerable.Range(1, 5).Select(index => new Task
-        // {
-        //     Id = Count++,
-        //     Name = NameOfTasks[Random.Shared.Next(NameOfTasks.Length)],
-        //     DoDate = DateTime.Now.AddDays(index),
-        //     IsCompleted = isComplete[Random.Shared.Next(isComplete.Length)]
-        // }).ToArray();
     }
 
 
@@ -91,26 +73,26 @@ public class ListToDoController : ControllerBase
     }
 
 
-[HttpPut(Name = "UpdateTask")]
-public IActionResult UpdateTask(int id, [FromBody] Task updatedTask)
-{
-    if (updatedTask == null || id <= 0)
+    [HttpPut(Name = "UpdateTask")]
+    public IActionResult UpdateTask(int id, [FromBody] Task updatedTask)
     {
-        return BadRequest("Invalid task data or ID");
+        if (updatedTask == null || id <= 0)
+        {
+            return BadRequest("Invalid task data or ID");
+        }
+
+        int taskIndex = Tasks.FindIndex(t => t.Id == id);
+
+        if (taskIndex == -1)
+        {
+            return NotFound("Task not found");
+        }
+
+        Tasks[taskIndex] = updatedTask;
+        string updatedJsonData = JsonSerializer.Serialize(Tasks);
+        System.IO.File.WriteAllText("D:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
+
+        return NoContent();
     }
-
-    int taskIndex = Tasks.FindIndex(t => t.Id == id);
-
-    if (taskIndex == -1)
-    {
-        return NotFound("Task not found");
-    }
-
-    Tasks[taskIndex] = updatedTask;
-    string updatedJsonData = JsonSerializer.Serialize(Tasks);
-    System.IO.File.WriteAllText("D:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
-
-    return NoContent(); 
-}
 
 }
