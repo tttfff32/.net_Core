@@ -1,6 +1,6 @@
-namespace lesson_2;
+namespace lesson_2.Models;
 
-public class Task
+public class myTask
 {
     public int Id { get; set; }
     public string Name { get; set; }

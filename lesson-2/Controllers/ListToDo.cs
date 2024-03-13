@@ -3,8 +3,10 @@ using System.Collections.Immutable;
 using System.Xml.Serialization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
-using System.IO;
+using lesson_2.Interfaces;
+using lesson_2.Models;
+using lesson_2.Services;
+
 
 namespace lesson_2.Controllers;
 
@@ -12,33 +14,26 @@ namespace lesson_2.Controllers;
 [Route("[controller]")]
 public class ListToDoController : ControllerBase
 {
-    public string JsonData { get; set; }
-    public List<Task> Tasks { get; set; }
-    private readonly ILogger<ListToDoController> _logger;
+    private IListToDo listToDo;
 
 
-    public ListToDoController(ILogger<ListToDoController> logger)
+    public ListToDoController( IListToDo listToDo)
     {
-
-        JsonData = System.IO.File.ReadAllText("D:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json");
-        Tasks = JsonSerializer.Deserialize<List<Task>>(JsonData);
-
-        _logger = logger;
-
+        this.listToDo = listToDo;
     }
 
 
     [HttpGet(Name = "GetListToDo")]
-    public List<Task> Get()
+    public ActionResult<List<myTask>> Get()
     {
-        return Tasks;
+        return listToDo.Get();
     }
 
 
     [HttpGet("{id}", Name = "GetTaskById")]
     public IActionResult GetById(int id)
     {
-        Task myTask = Tasks.FirstOrDefault(task => task.Id == id);
+        myTask myTask = listToDo.GetById(id);
         if (myTask == null)
             return NotFound();
         return Ok(myTask);
@@ -47,52 +42,31 @@ public class ListToDoController : ControllerBase
     [HttpDelete("{id}", Name = "DeleteTaskById")]
     public IActionResult DeleteTaskById(int id)
     {
-        int taskToDelete = Tasks.FindIndex(task => task.Id == id);
-        if (taskToDelete > -1)
+        bool taskToDelete = listToDo.DeleteTaskById(id);
+        if (taskToDelete)
         {
-            Tasks.RemoveAt(taskToDelete);
-            string updatedJsonData = JsonSerializer.Serialize(Tasks);
-            System.IO.File.WriteAllText("D:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
             return NoContent();
         }
         return NotFound();
     }
 
     [HttpPost(Name = "AddTask")]
-    public IActionResult AddTask([FromBody] Task newTask)
+    public IActionResult AddTask([FromBody] myTask newTask)
     {
-        if (newTask == null)
-        {
-            return BadRequest("Invalid task data");
-        }
-        Tasks.Add(newTask);
-        string updatedJsonData = JsonSerializer.Serialize(Tasks);
-        System.IO.File.WriteAllText("D:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
-
-        return CreatedAtRoute("GetListToDo", new { id = newTask.Id }, newTask);
+        bool addTask = listToDo.AddTask(newTask);
+        if(addTask)
+            return CreatedAtRoute("GetListToDo", new { id = newTask.Id }, newTask);
+        return NotFound("cant add new task ");
     }
 
 
     [HttpPut(Name = "UpdateTask")]
-    public IActionResult UpdateTask(int id, [FromBody] Task updatedTask)
+    public IActionResult UpdateTask(int id, [FromBody] myTask updatedTask)
     {
-        if (updatedTask == null || id <= 0)
-        {
-            return BadRequest("Invalid task data or ID");
-        }
-
-        int taskIndex = Tasks.FindIndex(t => t.Id == id);
-
-        if (taskIndex == -1)
-        {
-            return NotFound("Task not found");
-        }
-
-        Tasks[taskIndex] = updatedTask;
-        string updatedJsonData = JsonSerializer.Serialize(Tasks);
-        System.IO.File.WriteAllText("D:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
-
-        return NoContent();
+        bool update = listToDo.UpdateTask(id,updatedTask);
+        if(update)
+            return NoContent();
+        return NotFound("cant update task");
     }
 
 }

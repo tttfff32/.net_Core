@@ -30,22 +30,22 @@ public class WeatherForecastController : ControllerBase
         .ToArray();
     }
 
-      [HttpGet("{id}", Name = "GetWeatherForecastById")]
-public IActionResult GetById(int id)
+    [HttpGet("{id}", Name = "GetWeatherForecastById")]
+    public IActionResult GetById(int id)
+    {
+        if (id < 0 || id >= Summaries.Length)
         {
-            if (id < 0 || id >= Summaries.Length)
-            {
-                return BadRequest("Invalid ID");
-            }
-
-            var weatherForecast = new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(id),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[id]
-            };
-
-            return Ok(weatherForecast);
+            return BadRequest("Invalid ID");
         }
-    
+
+        var weatherForecast = new WeatherForecast
+        {
+            Date = DateTime.Now.AddDays(id),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = Summaries[id]
+        };
+
+        return Ok(weatherForecast);
+    }
+
 }
