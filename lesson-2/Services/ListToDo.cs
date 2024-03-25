@@ -14,11 +14,11 @@ public class ListToDo :IListToDo
 {
     public string JsonData { get; set; }
     public List<myTask> Tasks { get; set; }
-
+public string JsonUrl="F:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json";
 
     public ListToDo()
     {
-        JsonData = System.IO.File.ReadAllText("E:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json");
+        JsonData = System.IO.File.ReadAllText(JsonUrl);
         Tasks = JsonSerializer.Deserialize<List<myTask>>(JsonData);
     }
 
@@ -39,7 +39,7 @@ public class ListToDo :IListToDo
         {
             Tasks.RemoveAt(taskToDelete);
             string updatedJsonData = JsonSerializer.Serialize(Tasks);
-            System.IO.File.WriteAllText("E:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
+            System.IO.File.WriteAllText(JsonUrl, updatedJsonData);
             return true;
         }
         return false;
@@ -51,29 +51,28 @@ public class ListToDo :IListToDo
         {
             return false;
         }
+        newTask.Id = Tasks.Count() + 1;
         Tasks.Add(newTask);
         string updatedJsonData = JsonSerializer.Serialize(Tasks);
-        System.IO.File.WriteAllText("E:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
+        System.IO.File.WriteAllText(JsonUrl, updatedJsonData);
         return true;
     }
 
 
-    public bool UpdateTask(int id, [FromBody] myTask updatedTask)
+    public bool UpdateTask(int id,myTask updatedTask)
     {
         if (updatedTask == null || id <= 0)
         {
             return false;
         }
-
         int taskIndex = Tasks.FindIndex(t => t.Id == id);
-
         if (taskIndex == -1)
         {
             return false;
         }
         Tasks[taskIndex] = updatedTask;
         string updatedJsonData = JsonSerializer.Serialize(Tasks);
-        System.IO.File.WriteAllText("E:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json", updatedJsonData);
+        System.IO.File.WriteAllText(JsonUrl, updatedJsonData);
 
         return true;
     }

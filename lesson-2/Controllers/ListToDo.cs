@@ -60,13 +60,14 @@ public class ListToDoController : ControllerBase
     }
 
 
-    [HttpPut(Name = "UpdateTask")]
-    public IActionResult UpdateTask(int id, [FromBody] myTask updatedTask)
+    [HttpPut("{id}", Name = "UpdateTask")]
+    public IActionResult UpdateTask(int id,  myTask updatedTask)
     {
         bool update = listToDo.UpdateTask(id,updatedTask);
         if(update)
             return NoContent();
-        return NotFound("cant update task");
+        else
+             return NotFound(); 
     }
 
 }

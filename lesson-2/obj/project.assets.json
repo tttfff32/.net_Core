@@ -427,11 +427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
+      "projectUniqueName": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
       "projectName": "lesson-2",
-      "projectPath": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
+      "projectPath": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
       "packagesPath": "C:\\Users\\The user\\.nuget\\packages\\",
-      "outputPath": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\obj\\",
+      "outputPath": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

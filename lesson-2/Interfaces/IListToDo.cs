@@ -15,6 +15,6 @@ public interface IListToDo
      myTask GetById(int id);
      bool DeleteTaskById(int id);
      bool AddTask([FromBody] myTask newTask);
-     bool UpdateTask(int id, [FromBody] myTask updatedTask);
+     bool UpdateTask(int id, myTask updatedTask);
 
 }
