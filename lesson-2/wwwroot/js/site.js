@@ -13,7 +13,7 @@ function addItem() {
     // const addhourTextbox = document.getElementById('add-hour');
 
     const item = {
-        isComplited: false,
+        isCompleted: false,
         name: addNameTextbox.value.trim(),
         // hour: addhourTextbox.value.trim()
     };
@@ -49,7 +49,7 @@ function displayEditForm(id) {
     document.getElementById('edit-name').value = item.name;
     // document.getElementById('edit-hour').value = item.hour;
     document.getElementById('edit-id').value = item.id;
-    document.getElementById('edit-isComplited').checked = item.isComplited;
+    document.getElementById('edit-isCompleted').checked = item.isCompleted;
     document.getElementById('editForm').style.display = 'block';
 }
 
@@ -57,7 +57,7 @@ function updateItem() {
     const itemId = document.getElementById('edit-id').value;
     const item = {
         id: parseInt(itemId, 10),
-        isComplited: document.getElementById('edit-isComplited').checked,
+        isCompleted: document.getElementById('edit-isCompleted').checked,
         name: document.getElementById('edit-name').value.trim(),
         // hour: document.getElementById('edit-hour').value.trim()
 
@@ -101,7 +101,7 @@ function _displayItems(data) {
         let isComplitedCheckbox = document.createElement('input');
         isComplitedCheckbox.type = 'checkbox';
         isComplitedCheckbox.disabled = true;
-        isComplitedCheckbox.checked = item.isComplited;
+        isComplitedCheckbox.checked = item.isCompleted;
         
 
         let editButton = button.cloneNode(false);

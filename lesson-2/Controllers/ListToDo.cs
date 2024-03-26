@@ -61,7 +61,7 @@ public class ListToDoController : ControllerBase
 
 
     [HttpPut("{id}", Name = "UpdateTask")]
-    public IActionResult UpdateTask(int id,  myTask updatedTask)
+    public IActionResult UpdateTask(int id, [FromBody] myTask updatedTask)
     {
         bool update = listToDo.UpdateTask(id,updatedTask);
         if(update)

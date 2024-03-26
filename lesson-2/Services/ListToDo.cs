@@ -59,7 +59,7 @@ public string JsonUrl="F:/שיעורי בית תשפד/זילברברג/.net_Cor
     }
 
 
-    public bool UpdateTask(int id,myTask updatedTask)
+    public bool UpdateTask(int id,[FromBody] myTask updatedTask)
     {
         if (updatedTask == null || id <= 0)
         {
