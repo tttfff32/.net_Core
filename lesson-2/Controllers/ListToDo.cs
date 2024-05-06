@@ -22,7 +22,6 @@ public class ListToDoController : ControllerBase
         this.listToDo = listToDo;
     }
 
-
     [HttpGet(Name = "GetListToDo")]
     public ActionResult<List<myTask>> Get()
     {

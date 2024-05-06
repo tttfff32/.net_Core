@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj": {}
+    "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj": {}
   },
   "projects": {
-    "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj": {
+    "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
+        "projectUniqueName": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
         "projectName": "lesson-2",
-        "projectPath": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
+        "projectPath": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\lesson-2.csproj",
         "packagesPath": "C:\\Users\\The user\\.nuget\\packages\\",
-        "outputPath": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\obj\\",
+        "outputPath": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,9 +44,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

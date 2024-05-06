@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Suuq5ShNwn8Ww2efdLyEsml64K4UtARJRjetnrxmH1I=",
+  "Hash": "1BO1sdfDjYj4yQDU7+cCHaYyiQk0ROTji250EKiBV5c=",
   "Source": "lesson-2",
   "BasePath": "_content/lesson-2",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "lesson-2\\wwwroot",
       "Source": "lesson-2",
-      "ContentRoot": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
+      "ContentRoot": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
       "BasePath": "_content/lesson-2",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\css\\site.css",
+      "Identity": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\css\\site.css",
       "SourceId": "lesson-2",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
+      "ContentRoot": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
       "BasePath": "_content/lesson-2",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\index.html",
+      "Identity": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\index.html",
       "SourceId": "lesson-2",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
+      "ContentRoot": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
       "BasePath": "_content/lesson-2",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\js\\site.js",
+      "Identity": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\js\\site.js",
       "SourceId": "lesson-2",
       "SourceType": "Discovered",
-      "ContentRoot": "F:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
+      "ContentRoot": "E:\\שיעורי בית תשפד\\זילברברג\\.net_Core\\lesson-2\\wwwroot\\",
       "BasePath": "_content/lesson-2",
       "RelativePath": "js/site.js",
       "AssetKind": "All",

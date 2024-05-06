@@ -83,3 +83,11 @@ F:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\obj\Debug\ne
 F:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\obj\Debug\net6.0\lesson-2.pdb
 F:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\obj\Debug\net6.0\lesson-2.genruntimeconfig.cache
 F:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\obj\Debug\net6.0\ref\lesson-2.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\lesson-2.staticwebassets.runtime.json
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll

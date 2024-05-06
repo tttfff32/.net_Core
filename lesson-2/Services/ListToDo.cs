@@ -14,7 +14,7 @@ public class ListToDo :IListToDo
 {
     public string JsonData { get; set; }
     public List<myTask> Tasks { get; set; }
-public string JsonUrl="F:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json";
+public string JsonUrl="E:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json";
 
     public ListToDo()
     {
