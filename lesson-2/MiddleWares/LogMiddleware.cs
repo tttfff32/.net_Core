@@ -6,7 +6,7 @@ namespace Middlewares;
     {
         private readonly RequestDelegate next;
         private readonly ILogger logger;
-        private readonly string logFilePath;//="F:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Log.txt";
+        private readonly string logFilePath;//="D:/שנה ב/זילברברג/שיעורי בית/פרויקט/net_Core-main/.net_Core-main/lesson-2/Log.txt";
 
         public LogMiddleware(RequestDelegate next, ILogger<LogMiddleware> logger, string logFilePath)
         {

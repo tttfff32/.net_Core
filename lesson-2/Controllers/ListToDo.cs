@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using lesson_2.Interfaces;
 using lesson_2.Models;
+using Microsoft.AspNetCore.Authorization;
 using lesson_2.Services;
 
 
@@ -12,6 +13,8 @@ namespace lesson_2.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize(Policy = "classUser")]
+
 public class ListToDoController : ControllerBase
 {
     private IListToDo listToDo;

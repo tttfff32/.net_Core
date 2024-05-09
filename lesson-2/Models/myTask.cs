@@ -6,5 +6,5 @@ public class myTask
     public string Name { get; set; }
     // public string DoDate { get; set; }
     public bool IsCompleted { get; set; }
-
+     public int UserId { get; set; } 
 }

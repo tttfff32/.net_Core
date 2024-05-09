@@ -12,8 +12,8 @@ namespace lesson_2.Services
 {
     public static class TokenService
     { 
-        private static SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("asdfghjkfdstyujfty85258dfkfgkgdhju85"));
-        private static string issuer = "https://ToDoList.com";
+        private static readonly SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("asdfghjkfdstyujfty85258dfkfgkgdhju85"));
+        private static readonly string issuer = "https://ToDoList.com";
         public static SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
@@ -29,7 +29,7 @@ namespace lesson_2.Services
                 ValidIssuer = issuer,
                 ValidAudience = issuer,
                 IssuerSigningKey = key,
-                ClockSkew = TimeSpan.Zero // remove delay of token when expire
+                ClockSkew = TimeSpan.FromDays(5) // remove delay of token when expire
             };
 
         public static string WriteToken(SecurityToken token) =>
