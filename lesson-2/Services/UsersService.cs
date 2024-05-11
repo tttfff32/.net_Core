@@ -18,7 +18,7 @@ public string JsonUrl="E:/שיעורי בית תשפד/זילברברג/.net_Cor
 
     public UsersService()
     {
-        JsonData = System.IO.File.ReadAllText(JsonUrl);
+        JsonData =File.ReadAllText(JsonUrl);
         Users = JsonSerializer.Deserialize<List<User>>(JsonData);
     }
 

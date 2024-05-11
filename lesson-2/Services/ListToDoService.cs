@@ -10,13 +10,13 @@ using System.IO;
 
 namespace lesson_2.Services;
 
-public class ListToDo :IListToDo
+public class ListToDoService :IListToDo
 {
     public string JsonData { get; set; }
     public List<myTask> Tasks { get; set; }
 public string JsonUrl="E:/שיעורי בית תשפד/זילברברג/.net_Core/lesson-2/Data/Task.json";
 
-    public ListToDo()
+    public ListToDoService()
     {
         JsonData = System.IO.File.ReadAllText(JsonUrl);
         Tasks = JsonSerializer.Deserialize<List<myTask>>(JsonData);

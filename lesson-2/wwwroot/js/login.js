@@ -1,7 +1,7 @@
-const uri = "/Admin"
+const uri = "/Login"
 
 
-
+const idArrforAdmin =[];
 function newUser() {
     const UserName = document.getElementById('userName');
     const Password = document.getElementById('password');
@@ -10,12 +10,20 @@ function newUser() {
         Id: parseInt(Password.value.trim())*32,
         UserName: UserName.value.trim(),
         Password: Password.value.trim(),
+        Name:"",
+        Phone:""
     };
-
-    function storeTokenInLocalStorage(token) {
+    //the admin can add users by using in thats details
+    idArrforAdmin.push(
+        {id:item.id,
+        userName:item.UserName
+    }
+)
+    function storeTokenInLocalStorage(token,isAdmin) {
         const userInfo = {
             token: token,
-            id: item.Id
+            id: item.Id,
+            isAdmin:isAdmin
           };
           const userInfoString = JSON.stringify(userInfo);
         localStorage.setItem('dotant_token', userInfoString);
@@ -33,5 +41,10 @@ function newUser() {
             storeTokenInLocalStorage(data);
             window.location.href = "./index.html"
         })
-        .catch(error => console.error('Unable to add item.', error));
+        .catch(error => console.error('Unable to login.', error, ));
+        // window.location.href="./login.html"
+}
+
+function openPostman() {
+    window.open('postman://app', '_blank');
 }

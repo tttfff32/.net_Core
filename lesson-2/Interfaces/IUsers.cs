@@ -13,7 +13,7 @@ public interface IUsers
      List<User> Get() ;
      User GetById(int id);
      bool DeleteUserById(int id);
-     bool AddUser([FromBody] User user);
+     bool AddUser([FromBody] User newuser);
      bool UpdateUser(int id, User updateUser);
 
 }

@@ -10,7 +10,8 @@ namespace lesson_2.Utilties
     {
         public static void AddListToDo(this IServiceCollection services)
         {
-            services.AddSingleton<IListToDo  , ListToDo >();
+            services.AddSingleton<IListToDo  , ListToDoService >();
+            services.AddSingleton<IUsers,UsersService>();
         }
     }
 }

@@ -21,11 +21,11 @@ public class UsersController : ControllerBase
 
     public UsersController( IUsers user)
     {
-        this.myUser = user;
+        myUser = user;
 
     }
 
-    [HttpGet(Name = "GetUsers")]
+    [HttpGet(Name = "GetUser")]
     public ActionResult<List<User>> Get()
     {
         return myUser.Get();

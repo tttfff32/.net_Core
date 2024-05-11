@@ -10,9 +10,10 @@
     <h1>Users CRUD</h1>
     <h3>Add</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-Id" placeholder="Id">
-        <input type="text" id="add-Phone" placeholder="Name">
+        <input type="text" id="add-id" placeholder="Id">
+        <input type="text" id="add-username" placeholder="UserName">
         <input type="text" id="add-name" placeholder="Phone">
+        <input type="text" id="add-Phone" placeholder="Name">
         <input type="submit" value="Add">
     </form>
 
@@ -20,6 +21,7 @@
         <h3>Edit</h3>
         <form action="javascript:void(0);"   onsubmit="updateItem()">
             <input type="hidden" id="edit-id">
+            <input type="text" id="edit-Username">
             <input type="text" id="edit-name">
             <input type="text" id="edit-Phone">
             <input type="submit" value="Save">
@@ -32,13 +34,13 @@
     <table>
         <tr>
             <th>Id</th>
+            <th>UserName</th>
             <th>Name</th>
             <th>Phone</th>
             <th></th>
         </tr>
         <tbody id="Users"></tbody>
     </table>
-
     <script src="js/users.js" asp-append-version="true"></script>
     <script type="text/javascript">
         getItems();
