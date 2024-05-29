@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign_in</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 </head>
+
 <body>
-    <h1>hello user!</h1>
+
     <P>to login enter userName and Password:</P>
 
     <input type="text" placeholder="userName" id="userName">
     <input type="text" placeholder="password" id="password">
-    <button onclick="newUser()">connect</button>
+    <button onclick="login()">connect</button>
+    <div id="buttons">
+        <div class="g_id_signin" data-type="standard"></div>
+        <div id="g_id_onload" 
+            data-client_id="377986998960-r2iqkqkdn2r34qr5f6rcp42cgl4uh30s.apps.googleusercontent.com"
+            data-callback="handleCredentialResponse">
 
-    <button onclick="openPostman()">Go to POSTMAN</button>
-    <script src="js/login.js" asp-append-version="true"></script>
+            <div class="postman-run-button" data-postman-action="collection/fork" data-postman-visibility="public"
+                data-postman-var-1="29691298-796a18f4-6592-42b7-9631-ef205f3f9454"
+                data-postman-collection-url="entityId=29691298-796a18f4-6592-42b7-9631-ef205f3f9454&entityType=collection&workspaceId=06b9222d-93de-4662-a1c3-c27a16bf8d5b">
+            </div>
+       
+            <script type="text/javascript">
+                (function (p, o, s, t, m, a, n) {
+                    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+                    !o.getElementById(s + t) && o.getElementsByTagName("head")[0].appendChild((
+                        (n = o.createElement("script")),
+                        (n.id = s + t), (n.async = 1), (n.src = m), n
+                    ));
+                }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
+            </script>
+
+        </div>
+        <script src="js/login.js" asp-append-version="true"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@ namespace Middlewares;
     {
         private readonly RequestDelegate next;
         private readonly ILogger logger;
-        private readonly string logFilePath;//="D:/שנה ב/זילברברג/שיעורי בית/פרויקט/net_Core-main/.net_Core-main/lesson-2/Log.txt";
+        private readonly string logFilePath;
 
         public LogMiddleware(RequestDelegate next, ILogger<LogMiddleware> logger, string logFilePath)
         {
@@ -21,7 +21,7 @@ namespace Middlewares;
             sw.Start();
             await next.Invoke(c);
             
-            string logMessage =$"{c.Request.Path}.{c.Request.Method} took {sw.ElapsedMilliseconds}ms. User: {c.User?.FindFirst("userId")?.Value ?? "unknown"}";
+            string logMessage =$"{c.Request.Path}.{c.Request.Method} took {sw.ElapsedMilliseconds}ms. User: {c.User?.FindFirst("UserId")?.Value ?? "unknown"}";
             LogToFile(logMessage);
         }
 

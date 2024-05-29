@@ -8,18 +8,77 @@ button,
     display: none;
 }
 
-table {
+
+
+/* site.css */
+
+/* General styling */
+body {
     font-family: Arial, sans-serif;
-    border: 1px solid;
+    margin: 15px;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+table {
+    margin: 20px auto;
     border-collapse: collapse;
+    width: 80%;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
 }
 
 th {
-    background-color: #f8f8f8;
-    padding: 5px;
+    background-color: #f2f2f2;
 }
 
-td {
-    border: 1px solid;
-    padding: 5px;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+input[type="text"], input[type="submit"], button {
+    padding: 8px;
+    margin: 5px;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Specific styling for different pages */
+/* List To Do page */
+#editForm {
+    display: none;
+}
+
+/* Users CRUD page */
+#add-id {
+    width: 50px; /* Set the width of the Id input field */
+}
+
+#g_id_signin{
+   size: 100px;
+   width: 20%;
+}
+.nsm7Bb-HzV7m-LgbsSe-BPrWId{
+    size: 100px;
+    width: 20%;
 }

@@ -130,3 +130,5 @@ D:\שנה ב\זילברברג\שיעורי בית\פרויקט\net_Core-main\.ne
 E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Data\Users.json
 E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\package-lock.json
 E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\package.json
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\google.json
+E:\שיעורי בית תשפד\זילברברג\.net_Core\lesson-2\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Google.dll

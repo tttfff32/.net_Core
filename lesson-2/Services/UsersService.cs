@@ -51,7 +51,6 @@ public string JsonUrl="E:/שיעורי בית תשפד/זילברברג/.net_Cor
         {
             return false;
         }
-        //  newUser.Id = Users.Count() + 1;
         Users.Add(newUser);
         string updatedJsonData = JsonSerializer.Serialize(Users);
         System.IO.File.WriteAllText(JsonUrl, updatedJsonData);

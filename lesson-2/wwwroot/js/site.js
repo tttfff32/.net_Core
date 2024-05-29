@@ -84,7 +84,8 @@ function deleteItem(id) {
 }
 
 function displayEditForm(id) {
-    const item = tasks.find(item => item.id === id);
+   
+    const item = tasks.find(item => item.id === id );
 
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-id').value = item.id;
@@ -98,6 +99,7 @@ function updateItem() {
         id: parseInt(itemId, 10),
         isCompleted: document.getElementById('edit-isCompleted').checked,
         name: document.getElementById('edit-name').value.trim(),
+        userId: tokenObj.id,
 
     };
 
@@ -161,6 +163,7 @@ function _displayItems(data) {
 
         }
     });
+    tasks = data;
 }
     function getAllTasksToAdmin(data) {
         const tBody = document.getElementById('Tasks');

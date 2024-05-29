@@ -142,13 +142,15 @@ function _displayItems(data) {
         let usernameNode = document.createTextNode(user.username);
         td2.appendChild(usernameNode);
 
-        let td3 = tr.insertCell(2);
-        let textNode = document.createTextNode(user.name);
-        td3.appendChild(textNode);
+      
 
-        let td4 = tr.insertCell(3);
+        let td4 = tr.insertCell(2);
         let PhoneNode = document.createTextNode(user.phone);
         td4.appendChild(PhoneNode);
+
+        let td3 = tr.insertCell(3);
+        let textNode = document.createTextNode(user.name);
+        td3.appendChild(textNode);
 
         let td5 = tr.insertCell(4);
         td5.appendChild(editButton);

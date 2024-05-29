@@ -9,6 +9,7 @@ using lesson_2.Services;
 using System.Text.Json;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Identity;
 
 
 namespace lesson_2.Controllers
@@ -43,7 +44,9 @@ namespace lesson_2.Controllers
             }
             else
             {
-                if (Users.Find(u => u.Username.Equals(User.Username)) !=null)
+
+
+                if (Users.Find(u => u.Username.Equals(User.Username) && int.Parse(User.Password)* 32== u.Id) != null  )
                 {
                     var claims = new List<Claim>
                      {
